@@ -1,2 +1,9 @@
 /Origen/
 /Codigo Fuente/Z_EsqueletoDeClase.txt
+
+# Ignorar archivos específicos en la raíz del proyecto
+Consideraciones.php
+EsqueletoDeClase.txt
+
+# Ignorar la carpeta "Origen" dentro de Simulacro 2 Torneo
+Simulacros Parcial 2/Simulacro 2 Torneo/Origen/
