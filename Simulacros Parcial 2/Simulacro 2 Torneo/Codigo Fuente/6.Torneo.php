@@ -32,7 +32,7 @@ class Torneo{
         foreach ($partidos as $unPartido) {
             $cadenaPartidos .= $unPartido . "\n";
         }
-        $cadena = ("\n" . "Vagones: (" . $cantidadPartidos . ")"  . $cadenaPartidos . "\n");
+        $cadena = ("\n" . "Partidos: (" . $cantidadPartidos . ")"  . $cadenaPartidos . "\n");
         $cadena .= ("Importe Premio: ". $this->getImportePremio());
         return $cadena;
     }
@@ -54,8 +54,15 @@ class Torneo{
         $cantJugadoresEquipo2 = $OBJEquipo2Ingresado->getCantJugadores();
         if (($nombreCategoriaEquipo1 == $nombreCategoriaEquipo2) &&
             ($cantJugadoresEquipo1 == $cantJugadoresEquipo2)){
+                $tipoPartidoIngresado = strtolower($tipoPartidoIngresado);
                 $idNuevoPartido = ($cantPartidos+1);
-                $nuevoPartido = new Partido($idNuevoPartido,$fechaIngresado,$OBJEquipo1Ingresado,0,$OBJEquipo2Ingresado,0);
+                $nuevoPartido = match (true) {
+                $tipoPartidoIngresado == "futbol" => new PartidoFutbol($idNuevoPartido,$fechaIngresado,$OBJEquipo1Ingresado,0,$OBJEquipo2Ingresado,0),
+                $tipoPartidoIngresado == "basquet" => new PartidoBasquet($idNuevoPartido,$fechaIngresado,$OBJEquipo1Ingresado,0,$OBJEquipo2Ingresado,0,0),
+                default => throw new Exception("Tipo de partido desconocido: $tipoPartidoIngresado"),
+            };
+                // $idNuevoPartido = ($cantPartidos+1);
+                // $nuevoPartido = new Partido($idNuevoPartido,$fechaIngresado,$OBJEquipo1Ingresado,0,$OBJEquipo2Ingresado,0);
                 array_push($partidos,$nuevoPartido);
                 $this->setColPartidos($partidos);
         }

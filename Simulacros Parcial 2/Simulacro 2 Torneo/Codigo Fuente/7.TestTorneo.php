@@ -28,4 +28,8 @@ $objE10 = neW Equipo("Equipo Diez", "Cap.Diez",9,$catMenores);
 $objE11 = neW Equipo("Equipo Once", "Cap.Once",11,$catMayores);
 $objE12 = neW Equipo("Equipo Doce", "Cap.Doce",11,$catMayores);
 
+// $torneo = new Torneo(1000);
+// $torneo->ingresarPartido($objE1,$objE2,"11/03/2003","futbol");
+// echo $torneo;
+
 ?>
