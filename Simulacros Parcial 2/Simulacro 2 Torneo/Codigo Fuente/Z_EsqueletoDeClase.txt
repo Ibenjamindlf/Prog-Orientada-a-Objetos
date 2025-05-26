@@ -1,0 +1,33 @@
+<?php
+class NombreClase{
+    // Zona de atributos
+    private $atributo1;
+    // Zona de metodos 
+    // Metodo contructor 
+    public function __construct(){
+        $this->var = $var;
+    }
+    // Metodos de acceso (get's)
+    public function getAtributo(){
+        return $this->atributo1;
+    }
+    // Metodos de Modificacion (set's)
+    public function setAtributo($nuevoAtributo){
+        $this->atributo1 = $nuevoAtributo;
+    }
+    // Metodo de caracteres (__toString)
+    public function __toString()
+    {
+        $vagones = $this->getColVagones();
+        $cantidadVagones = count($vagones);
+        $cadenaVagones = "";
+        foreach ($vagones as $unVagon) {
+            $cadenaVagones .= $unVagon . "\n";
+        }
+        $cadena = ("\n" . "\n");
+        $cadena .= ("Vagones: (" . $cantidadVagones . ")"  . $cadenaVagones . "\n");
+        return $cadena;
+    }
+    // Metodo _____
+}
+?>
