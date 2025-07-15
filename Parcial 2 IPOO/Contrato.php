@@ -1,5 +1,4 @@
 <?php
-// pruebas de rama 2
 class Contrato{
     // Zona de atributos
     private $fechaInicio;
