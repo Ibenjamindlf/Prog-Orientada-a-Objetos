@@ -1,5 +1,4 @@
 <?php
-// pruebas de ramas
 class Aerolineas{
     // Zona de atributos
     private $identificacionInst; # Siendo Inst una abreviacion de instancia
